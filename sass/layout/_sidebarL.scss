@@ -5,24 +5,27 @@
 }
 .contLSBBack {
   @include background-opacity($LSB-background-color, $LSBBack-opacity);
-  img[src*="takako"] { /* 上原多香子 */
-    margin-top: 803px;
-    margin-left: 149px;
-  }
 }
-.lsb00 {   /* 独占直撃撮! */
-  color: $exclusive-color;
-  @include background-opacity(black, $LSBBack-opacity);
-  text-shadow: 0px 0px 2px black;
-  transform: rotate($text-rotation-deg);
-  font-size: 2.6em;
-  font-weight: bolder;
-  display: inline-block;
-  white-space: nowrap;
-  margin-top: -16px;
-  margin-left: -7px;
-  padding: 35px 8px 0px 19px;    /* black box area */
-  clip-path: polygon(4.5% 0%, 100% 38%, 97% 100%, .2% 100%);   // in the padding-box coordinates
+.contLSBImg {
+  .lsb00 {   /* 独占直撃撮! */
+    color: $exclusive-color;
+    @include background-opacity(black, $LSBBack-opacity);
+    text-shadow: 0px 0px 2px black;
+    transform: rotate($text-rotation-deg);
+    font-size: 2.6em;
+    font-weight: bolder;
+    display: inline-block;
+    white-space: nowrap;
+    margin-top: -16px;
+    margin-left: -7px;
+    padding: 35px 8px 0px 19px;    /* black box area */
+    clip-path: polygon(4.5% 0%, 100% 38%, 97% 100%, .2% 100%);   // in the padding-box coordinates
+  }
+  img[src*="takako"] { /* 上原多香子 */
+    position: relative;
+    float: right;
+    top: 802px;
+  }
 }
 .lsb01 {
   font-weight: bold;
@@ -112,5 +115,4 @@
     margin-right: 21px;
   }
 }
-
 

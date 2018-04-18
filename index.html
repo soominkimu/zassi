@@ -36,7 +36,7 @@
       </div>
     </div>
     <!-- Background image -->
-    <div class="contBack">
+    <div class="contBack" id="ID_Back">
       <img class="main-img" src="images/satomi702x757c.jpg" alt="石原さとみ" height="757">
     </div>
     <!-- Title 週刊女性 -->
@@ -76,7 +76,9 @@
         １９５７年３月２２日第三種郵便物認可</div>
     </div>
     <!-- Left-side Background -->
-    <div class="contLSBBack">
+    <div class="contLSBBack" id="ID_LSBBack">
+    </div>
+    <div class="contLSBImg">
       <div class="lsb00">独占直撃撮!</div>
       <img class="lsb01img" src="images/takako94x116.png" alt="上原多香子">
     </div>
@@ -102,7 +104,7 @@
       </div>
     </div>
     <!-- Right Sidebar -->
-    <div class="contRSBBack">
+    <div class="contRSBBack" id="ID_RSBBack">
     </div>
     <div class="contRSB">
       <div class="containerRSB">  <!-- Flexboxes -->
@@ -224,26 +226,44 @@
   </div>  <!-- container -->
   <!-- Controls -->
   <div class="controlContainer">
-    <button id="btn_hideOrgCover" onClick="hideOrgCover()">Web</button>
+    <button id="btn_hideOrgCover"
+      onClick="hideLayer('original-cover-layer', 'range_orgOpacity')">Web</button>
     <input id="range_orgOpacity" type="range" min="0" max="1" value="0" step="0.02"
-        onInput="ChangeOrgCoverOpacity(value)"/>
-    <button id="btn_showOrgCover" onClick="showOrgCover()">Paper</button>
+      onInput="ChangeOpacity('original-cover-layer', value)"/>
+    <button id="btn_showOrgCover"
+      onClick="showLayer('original-cover-layer', 'range_orgOpacity')">Paper</button>
+  </div>
+  <div class="controlContainer">
+    <button id="btn_hideLSB"
+      onClick="hideLayer('ID_LSBBack', 'range_LSBOpacity')">Hide Left Sidebar</button>
+    <input id="range_LSBOpacity" type="range" min="0" max="1" value="1" step="0.02"
+      onInput="ChangeOpacity('ID_LSBBack', value)"/>
+    <button id="btn_showLSB"
+      onClick="showLayer('ID_LSBBack', 'range_LSBOpacity')">Show Left Sidebar</button>
+  </div>
+  <div class="controlContainer">
+    <button id="btn_hideRSB"
+      onClick="hideLayer('ID_RSBBack', 'range_RSBOpacity')">Hide Right Sidebar</button>
+    <input id="range_RSBOpacity" type="range" min="0" max="1" value="1" step="0.02"
+      onInput="ChangeOpacity('ID_RSBBack', value)"/>
+    <button id="btn_showRSB"
+      onClick="showLayer('ID_RSBBack', 'range_RSBOpacity')">Show Right Sidebar</button>
   </div>
   <script>
-    function ChangeOrgCoverOpacity(val) {
-      var x = document.getElementById("original-cover-layer");
+    function ChangeOpacity(id, val) {
+      var x = document.getElementById(id);
       if (x.style.opacity != val)
         x.style.opacity = val;
     }
-    function hideOrgCover() {
-      var x = document.getElementById("original-cover-layer");
+    function hideLayer(id, id_range) {
+      var x = document.getElementById(id);
       x.style.opacity = "0";
-      document.getElementById("range_orgOpacity").value = x.style.opacity;
+      document.getElementById(id_range).value = x.style.opacity;
     }
-    function showOrgCover() {
-      var x = document.getElementById("original-cover-layer");
+    function showLayer(id, id_range) {
+      var x = document.getElementById(id);
       x.style.opacity = "1";
-      document.getElementById("range_orgOpacity").value = x.style.opacity;
+      document.getElementById(id_range).value = x.style.opacity;
     }
   </script>
 </body>

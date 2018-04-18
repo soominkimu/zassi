@@ -22,6 +22,7 @@
 
   .contLSB     { @include grid_row_col_z(1, 5, 1, 2, $z-third-layer); }
   .contLSBBack { @include grid_row_col_z(1, 5, 1, 2, $z-underground-layer); }
+  .contLSBImg  { @include grid_row_col_z(1, 5, 1, 2, $z-ground-layer); }
   .contHeader  { @include grid_row_col_z(1, 2, 2, 4, $z-second-layer); }
   .contRST     { @include grid_row_col_z(1, 2, 3, 4, $z-top-layer); }
   .contRSB     { @include grid_row_col_z(3, 5, 3, 4, $z-second-layer); }
