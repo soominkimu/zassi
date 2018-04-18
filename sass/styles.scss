@@ -52,7 +52,12 @@ body {
   }
 }
 #original-cover-layer {
-  opacity: 0;   /* hide when started */
+  display: none;    /* so that do not cover other elements */
+  opacity: 0;       /* hide when started */
+}
+.centerMsg {
+  margin: 2px;
+  text-align: center;
 }
 
 /* container */

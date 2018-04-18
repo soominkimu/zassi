@@ -8,15 +8,17 @@
   transform: scaleY(1.5);
 }
 /* CSS style */
-.rsb1img {  /* NHK drama */
-  position: relative;
-  top: -562px;
-  left: 122px;
-}
-.rsb5img {  /* 美味しいお肉 */
-  position: relative;
-  top: -180px;
-  left: -102px;
+.contRSB {
+  .rsb1img {  /* NHK drama */
+    position: relative;
+    top: -557px;
+    float: right;
+  }
+  .rsb5img {  /* 美味しいお肉 */
+    position: relative;
+    top: -178px;
+    float: left;
+  }
 }
 .bbtext {   /* blackboxed text such as 特別付録、主演、よくわかる、...*/
   @include textOnBox(white, black, 1px);

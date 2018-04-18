@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
 </head>
 <body>
-  <h3 style="margin: 2px; text-align: center;">Dashgon Lab: New Front-End Experiment</h3>
+  <h3 class="centerMsg">Dashgon Lab: New Front-End Experiment</h3>
   <div class="container"> <!-- CSS Grid "sass/base/_grid.scss" -->
     <!-- Header -->
     <div class="contHeader headerText">
@@ -114,7 +114,7 @@
         </svg>
         <div class="RSB1">
           <span class="bbtext">特別付録</span>
-          <span class="rsb11">NHK大河</span><br/>
+          <span class="rsb11">NHK大河</span>
           <div class="rsb12">『西郷どん』</div>
           <span class="rsb13">幕末疾走<br/>ナビ</span>
           <ul>
@@ -158,7 +158,7 @@
           お正月太りは<span class="bbtext">きゅうりダイエット</span>で解消！
         </div>
       </div>
-      <img class="rsb1img"src="images/seigodon98x90.jpeg" alt="NHK Drama">
+      <img class="rsb1img"src="images/nhk98x90.jpeg" alt="NHK Drama">
       <img class="rsb5img" src="images/umai75x92.jpeg" alt="うまい肉">
     </div>
     <!-- Middle Sidebar -->
@@ -225,45 +225,41 @@
     </div>
   </div>  <!-- container -->
   <!-- Controls -->
+  <h3 class="centerMsg">Optimized for Chrome and Firefox (not for Safari and IE yet)</h3>
   <div class="controlContainer">
     <button id="btn_hideOrgCover"
-      onClick="hideLayer('original-cover-layer', 'range_orgOpacity')">Web</button>
+      onClick="ChangeOpacity('original-cover-layer', '0')">Web</button>
     <input id="range_orgOpacity" type="range" min="0" max="1" value="0" step="0.02"
       onInput="ChangeOpacity('original-cover-layer', value)"/>
     <button id="btn_showOrgCover"
-      onClick="showLayer('original-cover-layer', 'range_orgOpacity')">Paper</button>
+      onClick="ChangeOpacity('original-cover-layer', '1')">Paper</button>
   </div>
   <div class="controlContainer">
     <button id="btn_hideLSB"
-      onClick="hideLayer('ID_LSBBack', 'range_LSBOpacity')">Hide Left Sidebar</button>
+      onClick="ChangeOpacity('ID_LSBBack', '0')">Hide Left Sidebar</button>
     <input id="range_LSBOpacity" type="range" min="0" max="1" value="1" step="0.02"
       onInput="ChangeOpacity('ID_LSBBack', value)"/>
     <button id="btn_showLSB"
-      onClick="showLayer('ID_LSBBack', 'range_LSBOpacity')">Show Left Sidebar</button>
+      onClick="ChangeOpacity('ID_LSBBack', '1')">Show Left Sidebar</button>
   </div>
   <div class="controlContainer">
     <button id="btn_hideRSB"
-      onClick="hideLayer('ID_RSBBack', 'range_RSBOpacity')">Hide Right Sidebar</button>
+      onClick="ChangeOpacity('ID_RSBBack', '0')">Hide Right Sidebar</button>
     <input id="range_RSBOpacity" type="range" min="0" max="1" value="1" step="0.02"
       onInput="ChangeOpacity('ID_RSBBack', value)"/>
     <button id="btn_showRSB"
-      onClick="showLayer('ID_RSBBack', 'range_RSBOpacity')">Show Right Sidebar</button>
+      onClick="ChangeOpacity('ID_RSBBack', '1')">Show Right Sidebar</button>
   </div>
   <script>
     function ChangeOpacity(id, val) {
       var x = document.getElementById(id);
-      if (x.style.opacity != val)
-        x.style.opacity = val;
-    }
-    function hideLayer(id, id_range) {
-      var x = document.getElementById(id);
-      x.style.opacity = "0";
-      document.getElementById(id_range).value = x.style.opacity;
-    }
-    function showLayer(id, id_range) {
-      var x = document.getElementById(id);
-      x.style.opacity = "1";
-      document.getElementById(id_range).value = x.style.opacity;
+      x.style.opacity = val;
+      x.style.display = (val == "0") ? "none" : "block";
+      switch (id) { // synchronize with the slider
+        case "original-cover-layer": document.getElementById("range_orgOpacity").value = val; break;
+        case "ID_LSBBack":           document.getElementById("range_LSBOpacity").value = val; break;
+        case "ID_RSBBack":           document.getElementById("range_RSBOpacity").value = val; break;
+      }
     }
   </script>
 </body>
