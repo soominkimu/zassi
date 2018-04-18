@@ -1,0 +1,166 @@
+/* Footer */
+@mixin footerCommon($color, $font-weight: bolder) {
+  color: $color;
+  font-weight: $font-weight;
+  text-shadow: 0px 0px 1px darken($color, 30%);
+}
+.footerText {
+  z-index: $z-ground-layer;
+  font-family: $bold-font;
+  font-weight: 400;
+  text-shadow: 0px 0px 2px white;
+  padding-left: 7px;
+
+  .footer01 {   // #21206B
+    @include footerCommon($footer01-color);
+
+    .footer011 {  /* セラピー、災害救助に犬型ロボット */
+      font-size: .8em;
+      letter-spacing: -.12em;
+    }
+    .footer012 {  /* 「人と犬」４つの... ダフルストーリー */
+      font-size: 2.3em;
+      letter-spacing: -.18em;
+      transform: scaleX(.84);
+      margin-left: -31px;
+      text-indent: -3px;
+      line-height: 1.1;
+      .footer012b {   /* ワン */
+        color: white;
+        @include textOutline($footer01-color, 2px);
+      }
+    }
+    .footer013 { /* いぬ年/特別企画 */
+      display: inline-block;
+      font-size: .9em;
+      position: relative;
+      left: 180px;
+      top: -76px;
+      line-height: 1.1;
+      padding-left: 2px;
+      padding-bottom: 2px;
+      border-left: 1px solid;
+      border-bottom: 1px solid;
+      transform: rotate($text-rotation-deg);
+    }
+  }
+  .footer02 {   // #DC1080
+    @include footerCommon($footer02-color);
+    letter-spacing: -.05em;
+    transform: scaleY(1.3);
+    position: relative;
+    top: -32px;
+    line-height: 0.9;
+
+    .footer021 {  /* 皮膚の老化... */
+      font-size: .7em;
+      line-height: 1.45;
+    }
+    .footer021a {   /* ミラクル/スパイス */
+      font-size: .74em;
+      display: inline-block;
+      padding: 2px;
+      border: 1px solid currentColor;
+    }
+    .footer022 {  /* ”クミン”で若返る！ */
+      font-size: 1.7em;
+      letter-spacing: -.16em;
+    }
+  }
+  .footer03 {   // #B37A3F
+    @include footerCommon($footer03-color, bold);
+    transform: scaleY(1.2);
+    position: relative;
+    top: -10px;
+
+    .footer031 {  /* 天皇陛下... */
+      font-size: .84em;
+      line-height: 1.1;
+      letter-spacing: -.19em;
+      .footer031a {
+        letter-spacing: -.01em;
+      }
+      .footer031b { /* ほか */
+        font-size: .9em;
+      }
+    }
+    .footer032 {  /* 皇室Q . A ... */
+      font-size: 1.9em;
+      letter-spacing: -.07em;
+      position: relative;
+      top: -62px;
+      left: 65px;
+    }
+    .footer0321 {  /* & */
+      font-size: .7em;
+    }
+    .footer032a {   /* 厳選 */
+      @include rotateVtext(.44em, black, currentColor);
+      margin-left: 1px;
+      margin-right: 1px;
+    }
+    .footer032b {   /* 9 */
+      display: inline-block;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      text-align: center;
+      background-color: $footer03-color;
+      color: white;
+      padding: 1px;
+      line-height: .9;
+    }
+  }
+  .footer04 {   // #D20056
+    @include footerCommon($footer04-color, bold);
+    transform: scaleY(1.1);
+    position: relative;
+    top: -30px;
+
+    .footer041 {  /* 好評連載/人間ドキュメント ... */
+      width: 85px;
+      height: 36px;
+      font-size: .92em;
+      font-weight: bold;
+      line-height: 1.05;
+      color: white;
+      background: $footer04-color;
+      text-shadow: 1px 1px 1px black;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 1);
+      position: relative; // to position the circle
+      left: 6px;
+      top: -6px;
+      padding-top: 5px;   // to align the texts in the circle
+    }
+    .footer042 {
+      margin-top: -42px;
+      margin-left: 97px;
+      font-size: 1.3em;
+      line-height: .8;
+      .footer042a { /* コラムニスト... */
+        font-size: .55em;
+        @include textOnBox(white, $footer04-color, 1px);
+        vertical-align: middle;
+      }
+      .footer042b { /* さん */
+        font-size: .7em;
+        margin-left: -8px;
+      }
+      .footer042c { /* 身長100センチ... */
+        font-size: .7em;
+        letter-spacing: -.05em;
+      }
+      .footer042d { /* 「障害者が当たり前に暮らせる社会に」*/
+        font-size: 1.15em;
+        letter-spacing: -.198em;
+        text-indent: -100px;
+        margin-top: 7px;
+      }
+    }
+  }
+}
+
+
+

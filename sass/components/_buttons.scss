@@ -1,0 +1,34 @@
+/* controls: buttons, range slider, etc. */
+.controlContainer {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > * {
+    margin: 10px;
+  }
+}
+
+input[type=range] {
+  width: 100px;
+}
+%btn_OrgCover {
+  border: none;
+  border-radius: 50%;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+#btn_hideOrgCover {
+  background-color: YellowGreen;
+  @extend %btn_OrgCover;
+}
+#btn_showOrgCover {
+  background-color: Plum;
+  @extend %btn_OrgCover;
+}
+

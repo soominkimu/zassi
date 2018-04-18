@@ -1,0 +1,116 @@
+/* Left Sidebar */
+.contLSB {  // grid
+  writing-mode: vertical-rl;
+  margin-top: 62px;    // shape-outside didn't work
+}
+.contLSBBack {
+  @include background-opacity($LSB-background-color, $LSBBack-opacity);
+  img[src*="takako"] { /* 上原多香子 */
+    margin-top: 803px;
+    margin-left: 149px;
+  }
+}
+.lsb00 {   /* 独占直撃撮! */
+  color: $exclusive-color;
+  @include background-opacity(black, $LSBBack-opacity);
+  text-shadow: 0px 0px 2px black;
+  transform: rotate($text-rotation-deg);
+  font-size: 2.6em;
+  font-weight: bolder;
+  display: inline-block;
+  white-space: nowrap;
+  margin-top: -16px;
+  margin-left: -7px;
+  padding: 35px 8px 0px 19px;    /* black box area */
+  clip-path: polygon(4.5% 0%, 100% 38%, 97% 100%, .2% 100%);   // in the padding-box coordinates
+}
+.lsb01 {
+  font-weight: bold;
+  color: black;
+  white-space: nowrap;
+  @if $LSBBack-opacity > .1 {
+    text-shadow: 0px 0px 2px lighten($LSB-background-color, 20%);
+  }
+
+  .lsb011 {   /* 上原多香子 */
+    font-weight: bolder;
+    font-size: 5.54em;
+    letter-spacing: -.02em;
+    transform: scaleX(1.46);
+    line-height: 1.53;
+  }
+  .lsb01a {  /* age */
+    position: relative;
+    top: 423px;
+    left: 162px;
+  }
+  .lsb01B {
+    display: inline-block;
+    position: relative;
+    top: 369px;
+    left: 146px;
+    
+    .lsb01Ba { /* 演出家 */
+      writing-mode: horizontal-tb;
+      font-size: .65em;
+      font-weight: 300;
+      @include textOnBox(white, black, 1px);
+      margin-top: 55px;
+      margin-left: -44px;
+      transform: rotate($text-rotation-deg);
+    }
+    .lsb01B1 {  /* コウカズヤとの…/彼氏が周囲に漏らす… */
+      font-size: 2em;
+      font-weight: bolder;
+      letter-spacing: -.11em;
+      transform: scaleY(.81);
+      text-indent: 16px;
+      line-height: 0.98;
+      .lsb01B1a { /* age */
+        display: inline-box;
+        text-indent: 0px;
+        margin-left: 16px;
+      }
+    }
+    .lsb01B2 {  /* ”自分に支えられるか不安” */
+      font-size: 3em;
+      transform: scale(1.18, .81);
+      color: white;
+      line-height: 1.4;
+      text-indent: -2px;
+      @include textOutline(black, 2px);
+    }
+  }
+  .lsb012 {   /* 高級タワマンから  なしの２LDKへ */
+    font-weight: bolder;
+    font-size: 3.5em;
+    letter-spacing: -.1em;
+    transform: scaleX(1.5);
+    line-height: 1.5;
+    margin-right: -157px;
+    margin-top: 18px;
+    text-orientation: upright;  /* Not working for safari */
+
+    .lsb012h {  /* for spacing */
+      font-size: .58em;
+      opacity: 0;
+    }
+    .lsb0121 { /* オート/ロック */
+      font-size: .53em;
+      margin-top: 406px;
+      margin-right: -70px;
+      display: flex;
+      flex-direction: column;
+      line-height: .88;
+    }
+  }
+  .lsb013 {   /* 昨年８月、前夫の自殺は自らの不倫が原因だったと... */
+    font-size: .78em;
+    letter-spacing: -.145em;
+    transform: scaleX(1.2);
+    margin-top: 25px;
+    margin-right: 21px;
+  }
+}
+
+

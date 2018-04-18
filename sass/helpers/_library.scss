@@ -1,0 +1,45 @@
+/* mixins and functions */
+/* by Soomin K. Apr,2018 */
+
+// uses CSS text-shadow to draw outlines with the color and width in px
+// limitations exist, use SVG for better outline when magnified
+@mixin textOutline($color, $p: 1px) {
+  text-shadow:
+    $p $p $color,
+    -#{$p} -#{$p} $color,
+    $p -#{$p} $color,
+    -#{$p} $p $color;
+}
+
+// text on a box with given fg color over bg box color and side paddings
+@mixin textOnBox($fgc: white, $bgc: black, $p: 2px) {
+  display: inline-block;
+  color: $fgc;
+  background-color: $bgc;
+  padding: $p;
+}
+
+// set background color with opacity
+@mixin background-opacity($color, $opacity: 1) {
+  background: $color; /* fallback */
+  @if $opacity < 1 {
+    background: rgba($color, $opacity);
+  }
+}
+
+// rotated vertical text
+@mixin rotateVtext($fontSize, $bkColor: null, $color: white) {
+  writing-mode: vertical-rl;
+  font-size: $fontSize;
+  @if ($bkColor) {
+    background-color: $bkColor;
+  }
+  color: $color;
+  font-weight: normal;
+  transform: rotate($text-rotation-deg);
+  display: inline-block;
+  padding: 2px;
+  display: inline-block;
+  top: 2px;
+}
+

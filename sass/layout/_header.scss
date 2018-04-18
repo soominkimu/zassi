@@ -1,0 +1,181 @@
+/* CSS styles */
+.titleOverlay {   /* 1月16・23日号 ... */
+  font-size: .65em;
+  font-weight: normal;
+  transform: scaleY(1.1);
+  color: black;
+  display: inline-block;
+  position: relative;
+  top: -130px;
+  left: 6px;
+  letter-spacing: -.1em;
+  line-height: 1.14;
+  text-shadow: 1px 1px 2px black;
+}
+
+%circleText {
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 1);
+  transform: rotate($text-rotation-deg);
+}
+.circleTextBlue {   /* 10P/大特集 on blue circle */
+  width: 40px;
+  height: 40px;
+  font-size: .75em;
+  font-weight: bold;
+  line-height: 1.05;
+  letter-spacing: -.08em;
+  color: white;
+  background: $small-circle-color;
+  text-shadow: 1px 1px 1px black;
+  position: relative;
+  top: -134px;
+  left: 196px;
+  @extend %circleText;
+  z-index: $z-top-layer;
+
+  .ctextb01 {
+    padding-top: 6px;
+  }
+}
+
+@keyframes spinRedCircle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.circleTextBig {  /* right top big red circle */
+  width: 208px;
+  height: 208px;
+  color: white;
+  @include background-opacity($big-circle-color, $big-circle-opacity);
+  margin-left: 10px;
+  margin-top: -3px;
+  @extend %circleText;
+//  animation: spinRedCircle 60s linear 1;
+  text-shadow: 0px 0px 4px darken($big-circle-color, 30%);
+
+  .ctext01 {  /* 恒例! */
+    color: #F49A2F;
+    font-weight: bold;
+    font-size: 1.6em;
+    padding-top: 14px;  /* this worked! for top indentation */
+  }
+  .ctext02 {
+    color: white;
+    font-weight: bolder;
+    line-height: 1.06;
+    letter-spacing: -.08em;
+    text-shadow: 0px 0px 4px darken($big-circle-color, 30%);
+
+    .ctext021 {  /* ジャニーズ */
+      font-size: 2.1em;
+    }
+    .ctext022 {  /* 初詣2018 */
+      font-size: 2.6em;
+    }
+    .ctext023 {   /* ヒガシ TOKIO V6 / 嵐 関ジャニ */
+      letter-spacing: -.09em;
+      font-size: 1.5em;
+      .ctext023a {
+        font-size: .6em;
+      }
+    }
+  }
+  .ctext03 {  /* 新顔も参拝! */
+    color: #F49A2F;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}
+
+.publishTinyTate {  /* 2018年１月５日発行・発売... */
+  font-size: .55em;   // font size lower limit for firefox?
+  letter-spacing: -.09em;
+  transform: scale(.5, .45);
+  background-color: white;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  text-align: center;
+  float: right;
+  margin-top: -83px;    // z-index not works here, apply at the upper div
+  padding-right: 2px;
+  margin-right: -3px;
+}
+
+/* Header */
+.headerText {
+  text-shadow: 0px 0px 1px black;
+  font-weight: bold;
+  
+  .header01 {
+    background-color: $header-background-color;
+    line-height: 1.0;
+    padding-top: 18px;
+    padding-left: 4px;
+    padding-bottom: 6px;
+
+    .header011 {   /* 清宮幸太郎 */
+      font-size: 4em;
+      letter-spacing: -.024em;
+      transform: scaleY(1.16);
+    }
+    .header011a {   /* age */
+      margin-left: -18px;
+      position: relative;
+      top: 5px;
+    }
+    .header011t {   /* 選手 */
+      writing-mode: vertical-rl;
+      font-size: .42em;
+      margin-left: -29px;
+      float: top;
+    }
+    .header012 {    /* 改札前でハグ❤️ディズニーデート撮！　*/
+      font-size: 1.3em;
+      margin-top: 8px;
+      letter-spacing: -.04em;
+      transform: scaleY(1.2);
+      margin-bottom: 2px;
+    }
+  }
+  .header02 {
+    font-size: 1.03em;
+    transform: scaleY(1.35);
+    line-height: 1.27;
+    margin-left: 4px;
+    padding-top: 8px;
+
+    .header021a {   /* 直撃 */
+      @include rotateVtext(.42em, #E00D8E, white);
+    }
+    .header021 { /* 泰葉｢自己破産はちょっと延期｣...*/
+      color: $header-second-color;
+      transform: scaleY(1.2);
+      letter-spacing: -.06em;
+      margin-top: 1px;
+      margin-bottom: 2px;
+    }
+    .header022 {   /* 「紅白歌合戦」でウッチャンが見せた... */
+      color: white;
+      background-color: DarkGoldenrod;
+      letter-spacing: -.12em;
+      margin-left: -4px;
+      padding-left: 4px;
+      text-shadow: 0px 0px 4px black;
+    }
+    .header023 {   /* 明菜ディナショー大成功... */
+      color: black;
+      letter-spacing: -.17em;
+    }
+    .header023a {   /* 中森 */
+      writing-mode: vertical-rl;
+      font-size: .6em;
+    }
+    .header023b {   /* 完全 */
+      @include rotateVtext(.5em, black, white);
+    }
+  }
+}
+

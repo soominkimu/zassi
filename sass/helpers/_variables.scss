@@ -1,0 +1,88 @@
+/* document dimension */
+$doc_W: 796px;    /* 週刊女性 796 x 985 */
+$doc_H: 985px;
+
+$grid_col:
+  $doc_W * 243/796
+  $doc_W * 333/796
+  $doc_W * 220/796;
+$grid_row:
+  $doc_H * 200/985
+  $doc_H * 136/985
+  $doc_H * 329/985
+  $doc_H * 320/985;
+
+/* right sidebar height */
+$rsb_W: nth($grid_col, 3);
+$rsb_H: nth($grid_row, 3)
+      + nth($grid_row, 4);
+
+$rsb_row:
+  $rsb_H * 171/649
+  $rsb_H *  80/649
+  $rsb_H * 104/649
+  $rsb_H *  91/649
+  $rsb_H * 106/649
+  $rsb_H *  58/649
+  $rsb_H *  39/649;
+
+/* images & opacities */
+$main-img-opacity:     .9;
+$LSBBack-opacity:      1;
+$RSBBack-opacity:      1;
+$big-circle-opacity:   1;
+
+/* fonts */
+$body-font: "Mplus 1p", Arial, "Helvetica Neue", Helvetica, sans-serif;
+$bold-font: Arial Black, Arial Bold, "Noto Sans Japanese", serif;
+
+/* text colors */
+$title-color:             #D10012;
+$title-sub-color:         #F6BC1D;
+$title-slant-color:       #14168E;
+$exclusive-color:         #90572D;
+$big-circle-color:        #D90016;
+$small-circle-color:      #14168E;
+$header-background-color: #F7AF2C;
+$header-second-color:     #E00D8E;
+$LSB-background-color:    #E1689E;
+$msb011-color:            #E7A026;
+$msb013-color:            #D54679;
+$msb015-color:            #DD001B;
+$msb021-color:            white;
+$msb023-color:            $msb015-color;
+$footer01-color:          #21206B;
+$footer02-color:          #DC1080;
+$footer03-color:          #B37A3F;
+$footer04-color:          $footer02-color;
+
+/* Right Sidebar background colors
+#814E26
+#E73D81
+#F48F0E
+#E73D81
+#C3000F
+#150E5B
+#D20056
+*/
+$dimP: 10%;
+$rsb_bkcolor:
+  lighten(#814E26, $dimP)
+  lighten(#E73D81, $dimP)
+  lighten(#F48F0E, $dimP)
+  lighten(#E73D81, $dimP)
+  lighten(#C3000F, $dimP)
+  lighten(#150E5B, $dimP)
+  lighten(#D20056, $dimP);
+
+/* z-index for layers */
+$z-top-layer:          500;
+$z-second-layer:       400;
+$z-third-layer:        300;
+$z-fourth-layer:       200;
+$z-ground-layer:         0;
+$z-underground-layer: -100;
+$z-bottom-layer:      -200;
+
+/* rotation angle */
+$text-rotation-deg: -7.43deg;   /* arctan(39/299) = 0.129rad = 7.43deg */

@@ -1,0 +1,116 @@
+/* New Front-End Project
+ * Soomin K., Apr.,2018
+ * ---------------------------------------------------------
+ * SASS partials folder structure
+ * |-- helpers/                # special Sass files
+ * |    |-- _variables.scss
+ * |    |-- _library.scss       (mixins & functions)
+ * |
+ * |-- base/                   # starter files for project
+ * |    |-- _normalize.scss     (_reset.scss)
+ * |    |-- _grid.scss          (grid & flexbox)
+ * |    |-- _typography.scss
+ * |
+ * |-- layout/                 # to style page areas
+ * |    |-- _header.scss
+ * |    |-- _footer.scss
+ * |    |-- _sidebar{X}.scss    ({X}-L:left M:middle R:right)
+ * |    |-- _forms.scss
+ * |
+ * |-- components/             # UI coponents
+ * |    |-- _buttons.scss
+ * |    |-- _dropdown.scss
+ * |    |-- _navigation.scss
+ * |
+ * +-- styles.scss             # primary Sass file
+ * ---------------------------------------------------------
+ * Recommended tools
+ * - grunt | gulp | webpack
+ * - postcss (autoprefixer)
+ * - BrowserSync (with PESTICIDE/chrome plugin)
+ */
+@import 'helpers/variables';
+@import 'base/normalize';
+@import 'helpers/library';
+@import 'base/grid';
+@import 'layout/header.scss';
+@import 'layout/footer.scss';
+@import 'layout/sidebarL.scss';
+@import 'layout/sidebarR.scss';
+@import 'layout/sidebarM.scss';
+@import 'components/buttons.scss';
+
+body {
+  font-family: $body-font;
+  margin: 0;
+}
+.main-img {   /* 石原さとみ */
+  margin-left: 43px;    /* fit to left eye 20px, right eye 43px */
+  margin-top: 28px;
+  @if ($main-img-opacity < 1) {
+    opacity: $main-img-opacity;
+  }
+}
+#original-cover-layer {
+  opacity: 0;   /* hide when started */
+}
+
+/* container */
+.container {
+  margin: auto;   // will center at the page
+  border: 20px solid dimgray;
+}
+ 
+@keyframes kf_FadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+/* SVG styles */
+#titleMain {
+  font-size: 8.55em;
+  font-style: italic;
+  font-weight: bold;
+  color: $title-color;
+  text-shadow: 0px 0px 6px lighten($title-color, 30%);
+  fill: currentColor;
+
+  #titleMain2 {
+    font-size: 1.4em;
+  }
+}
+#titleSlant {   /* 違いのわかるニッポンの不思議SHOW */
+  font-size: 1.1em;
+  font-weight: bolder;
+  fill: $title-slant-color;
+  z-index: $z-second-layer;
+  transform: rotate($text-rotation-deg);
+}
+#titleSub {   /* 新年スペシャル合併号 */
+  font-size: 1.5em;
+  font-weight: bolder;
+  fill: $title-sub-color;
+  z-index: $z-second-layer;
+  text-shadow: 0px 0px 8px black;
+  transform: scaleY(1.3);
+}
+
+/* globally applied styles */
+.age-box {
+  font-size: 6px;
+  font-weight: normal;
+  writing-mode: horizontal-tb;
+  color: black;
+  background-color: white;
+  display: inline-block;
+  padding: 1px;
+  line-height: .8;
+  letter-spacing: normal;
+  border: 1px solid black;
+  text-shadow: none;
+}
+
+/* smaller fonts such as ほか */
+.smaller {
+  font-size: .8em;
+}
+

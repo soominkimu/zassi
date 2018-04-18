@@ -1,0 +1,7 @@
+node_modules/*
+.DS_Store
+yarn.lock
+css/*
+bak/*
+.sass-cache/*
+*.log

@@ -1,0 +1,217 @@
+/* Right Sidebar */
+/* SVG style */
+#rsb01 {  /* 特別付録&特別企画 */
+  font-size: 1.5em;
+  font-weight: bold;
+  text-shadow: 0px 0px 8px black;
+  fill: white;
+  transform: scaleY(1.5);
+}
+/* CSS style */
+.rsb1img {  /* NHK drama */
+  position: relative;
+  top: -562px;
+  left: 122px;
+}
+.rsb5img {  /* 美味しいお肉 */
+  position: relative;
+  top: -180px;
+  left: -102px;
+}
+.bbtext {   /* blackboxed text such as 特別付録、主演、よくわかる、...*/
+  @include textOnBox(white, black, 1px);
+}
+.containerRSB {
+  .RSB1 { // #814E26
+    font-size: .8em;
+    font-weight: bold;
+    text-shadow: 0px 0px 2px darken(nth($rsb_bkcolor, 1), 30%);
+    transform: scaleY(1.3);
+    color: white;
+    margin-top: 15px;
+
+    .rsb11 { /* NHK大河 */
+      font-size: 1.4em;
+      margin-left: -2px;
+      vertical-align: middle;
+    }
+    .rsb12 { /* 『西郷どん』*/
+      font-size: 2.3em;
+      letter-spacing: -.06em;
+      transform: scaleY(1.45);
+      margin-left: -15px;
+    }
+    .rsb13 { /* 幕末疾走/ナビ */
+      font-size: 1.3em;
+      position: relative;
+      left: 140px;
+      top: -34px;
+    }
+    ul {
+      list-style: none; /* Remove HTML bullets */
+      font-size: 1em;   /* should be >= 1em to avoid Firefox & Chrome mismatch! */
+      padding: 0;
+      margin-top: -34px;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    li { 
+      padding-left: 0px; 
+    }
+    li::before {
+      content: "●"; /* Insert content that looks like bullets */
+      padding-right: 1px;
+    }
+  }
+  .RSB2 { // #E73D81
+    margin-top: 13px;
+    font-weight: bold;
+    text-shadow: 0px 0px 2px darken(nth($rsb_bkcolor, 2), 30%);
+    .rsb21 {   /* 特別付録 */
+      font-size: 1em;
+    }
+    .rsb22 {  /* 認知症予防の権威... */
+      font-size: .82em;
+      transform: scaleY(1.8);
+      margin-top: -15px;
+      margin-left: 54px;
+    }
+    .rsb23 {  /* 脳トレ「ぬり絵」*/
+      font-size: 2.4em;
+      transform: scaleY(1.5);
+      letter-spacing: -.12em;
+      margin-top: 13px;
+    }
+    .rsb23a {  /* 最新 */
+      @include rotateVtext(.5em, null, black);
+    }
+    font-size: .8em;
+    color: white;
+    font-weight: bolder;
+  }
+  .RSB3 { // #F48F0E
+    margin-top: 21px;
+    font-size: .7em;
+    font-weight: bold;
+    text-shadow: 0px 0px 2px darken(nth($rsb_bkcolor, 3), 30%);
+    $rsb3-color: #B10006;
+    .rsb31 {  /* 知らなきゃ/ヤバイ */
+      width: 45px;
+      height: 37px;
+      font-size: .9em;
+      font-weight: normal;
+      line-height: 1.5;
+      color: white;
+      background: $rsb3-color;
+      text-shadow: 1px 1px 1px black;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 1);
+      position: relative; // to position the circle
+      left: 6px;
+      top: -6px;
+      padding-top: 5px;   // to align the texts in the circle
+      margin-left: -7px;
+      letter-spacing: -.2em;
+    }
+    .rsb32 {  /* 2018年ブレイク必至の... */
+      font-size: 1.4em;
+      color: $rsb3-color;
+      margin-top: -45px;
+      margin-left: 46px;
+      letter-spacing: -.2em;
+      transform: scaleY(1.3);
+    }
+    .rsb33 {  /* 木村匠海... */
+      font-size: 1.05em;
+      color: black;
+      margin-top: 9px;
+      text-align: right;
+      letter-spacing: -.089em;
+      transform: scaleY(1.3);
+    }
+  }
+  .RSB4 { // #E73D81
+    margin-top: 17px;
+    font-weight: bold;
+    text-shadow: 0px 0px 2px darken(nth($rsb_bkcolor, 4), 30%);
+    .rsb41 {  /* 話題の芸能人/カップルは/こうなる！*/
+      font-size: .8em;
+      letter-spacing: -.2em;
+      transform: scaleY(1.3);
+      line-height: 1.1;
+    }
+    .rsb42 {  /* 森田剛＆宮沢りえ*/
+      margin-top: -35px;
+      font-size: 1em;
+      color: white;
+      text-align: right;
+      letter-spacing: -.06em;
+      transform: scaleY(1.5);
+      line-height: 1.15;
+    }
+  }
+  .RSB5 { // #C3000F
+    margin-top: 22px;
+    font-weight: bold;
+    text-shadow: 0px 0px 2px darken(nth($rsb_bkcolor, 5), 30%);
+    .rsb51 {  /* 年の初めこそ...*/
+      font-size: .9em;
+      color: white;
+      transform: scaleY(1.3);
+      .rsb51a {
+        @include textOutline(black);
+      }
+    }
+    .rsb52 {  /* 全国ガチで... */
+      font-size: 1.9em;
+      color: white;
+      text-align: right;
+      letter-spacing: -.07em;
+      transform: scaleY(1.3);
+      line-height: 1;
+      margin-top: 9px;
+    }
+    .rsb53 {  /* お取り寄せ/情報も... */
+      font-size: .8em;
+      color: #F88818;
+      transform: rotate($text-rotation-deg);
+      position: relative;
+      top: -32px;
+      left: 44px;
+      letter-spacing: -.1em;
+    }
+  }
+  .RSB6 { // #150E5B
+    $rsb6-color: #C855A7;
+    margin-top: -12px;
+    color: $rsb6-color;
+    font-weight: bolder;
+    text-shadow: 0px 0px 2px darken(nth($rsb_bkcolor, 6), 30%);
+    .rsb61 {  /* 持たないほうが気持ちいい... */
+      font-size: 1em;
+      letter-spacing: -.02em;
+    }
+    .rsb62 {  /* ミニマル生活ススメ */
+      font-size: 1.2em;
+      transform: scaleY(1.3);
+      line-height: 1.3;
+      margin-top: 4px;
+    }
+    .rsb62a { /* 2018年 */
+      font-size: .5em;
+      @include textOnBox(white, $rsb6-color, 1px);
+      vertical-align: middle;
+    }
+  }
+  .RSB7 { // #D20056  お正月太りは... */
+    font-size: .75em;
+    color: white;
+    font-weight: bolder;
+    text-shadow: 0px 0px 2px darken(nth($rsb_bkcolor, 7), 30%);
+    letter-spacing: -.08em;
+    transform: scaleY(1.5);
+    margin-top: 14px;
+  }
+}
+
