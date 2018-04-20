@@ -33,6 +33,7 @@ $RSBBack-opacity:      1;
 $big-circle-opacity:   1;
 
 /* fonts */
+/* 'Mplus 1p' writing-mode: vertical-rl destroys the layout in Safari */
 $body-font: 'Mplus 1p', Arial, 'Helvetica Neue', Helvetica, sans-serif;
 $bold-font: 'Noto Sans Japanese', Arial Black, Arial Bold, serif;
 

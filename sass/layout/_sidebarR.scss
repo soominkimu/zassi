@@ -24,6 +24,8 @@
   @include textOnBox(white, black, 1px);
 }
 .containerRSB {
+  white-space: nowrap;
+
   .RSB1 { // #814E26
     font-size: .8em;
     font-weight: bold;
