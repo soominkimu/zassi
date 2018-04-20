@@ -36,13 +36,13 @@
       </div>
     </div>
     <!-- Background image -->
-    <div class="contBack" id="ID_Back">
+    <div class="contBack" id="id-imgback">
       <img class="main-img" src="images/satomi702x757c.jpg" alt="石原さとみ" height="757">
     </div>
     <!-- Title 週刊女性 -->
     <div class="contTitle">
       <svg overflow="visible" x="0px" y="0px" width="100%" height="100%">
-        <use xlink:href="#titleMain" stroke="#D10012" stroke-width="8" stroke-linejoin="round"/>
+        <use xlink:href="#titleMain" stroke="#d10012" stroke-width="8" stroke-linejoin="round"/>
         <use xlink:href="#titleMain" stroke="white" stroke-width="4" stroke-linejoin="round"/>
         <text id="titleMain" x="-70px" y="114px">週刊<tspan id="titleMain2" dy=".1em">女</tspan><tspan dx="-.04em" dy="-.11em">性</tspan>
         </text>
@@ -76,7 +76,7 @@
         １９５７年３月２２日第三種郵便物認可</div>
     </div>
     <!-- Left-side Background -->
-    <div class="contLSBBack" id="ID_LSBBack">
+    <div class="contLSBBack" id="id-LSBBack">
     </div>
     <div class="contLSBImg">
       <div class="lsb00">独占直撃撮!</div>
@@ -104,7 +104,7 @@
       </div>
     </div>
     <!-- Right Sidebar -->
-    <div class="contRSBBack" id="ID_RSBBack">
+    <div class="contRSBBack" id="id-RSBBack">
     </div>
     <div class="contRSB">
       <div class="containerRSB">  <!-- Flexboxes -->
@@ -219,7 +219,7 @@
         </div>
       </div>
     </div>
-    <div class="contLayer2" id="original-cover-layer">
+    <div class="contLayer2" id="id-orgback">
       <img src="images/WW20180116c.jpg" alt="Weekly Women 20180316"
         width="796px" height="985px">
     </div>
@@ -227,28 +227,36 @@
   <!-- Controls -->
   <h3 class="centerMsg">Optimized for Chrome and Firefox (not for Safari and IE yet)</h3>
   <div class="controlContainer">
-    <button id="btn_hideOrgCover"
-      onClick="ChangeOpacity('original-cover-layer', '0')">Web</button>
+    <button id="btn_hideOrg"
+      onClick="ChangeOpacity('id-orgback', '0')">Web</button>
     <input id="range_orgOpacity" type="range" min="0" max="1" value="0" step="0.02"
-      onInput="ChangeOpacity('original-cover-layer', value)"/>
-    <button id="btn_showOrgCover"
-      onClick="ChangeOpacity('original-cover-layer', '1')">Paper</button>
+      onInput="ChangeOpacity('id-orgback', value)"/>
+    <button id="btn_showOrg"
+      onClick="ChangeOpacity('id-orgback', '1')">Paper</button>
   </div>
   <div class="controlContainer">
     <button id="btn_hideLSB"
-      onClick="ChangeOpacity('ID_LSBBack', '0')">Hide Left Sidebar</button>
+      onClick="ChangeOpacity('id-LSBBack', '0')">Hide Left Sidebar</button>
     <input id="range_LSBOpacity" type="range" min="0" max="1" value="1" step="0.02"
-      onInput="ChangeOpacity('ID_LSBBack', value)"/>
+      onInput="ChangeOpacity('id-LSBBack', value)"/>
     <button id="btn_showLSB"
-      onClick="ChangeOpacity('ID_LSBBack', '1')">Show Left Sidebar</button>
+      onClick="ChangeOpacity('id-LSBBack', '1')">Show Left Sidebar</button>
   </div>
   <div class="controlContainer">
     <button id="btn_hideRSB"
-      onClick="ChangeOpacity('ID_RSBBack', '0')">Hide Right Sidebar</button>
+      onClick="ChangeOpacity('id-RSBBack', '0')">Hide Right Sidebar</button>
     <input id="range_RSBOpacity" type="range" min="0" max="1" value="1" step="0.02"
-      onInput="ChangeOpacity('ID_RSBBack', value)"/>
+      onInput="ChangeOpacity('id-RSBBack', value)"/>
     <button id="btn_showRSB"
-      onClick="ChangeOpacity('ID_RSBBack', '1')">Show Right Sidebar</button>
+      onClick="ChangeOpacity('id-RSBBack', '1')">Show Right Sidebar</button>
+  </div>
+  <div class="controlContainer">
+    <button id="btn_hideImg"
+      onClick="ChangeOpacity('id-imgback', '0')">Hide Image</button>
+    <input id="range_imgOpacity" type="range" min="0" max="1" value="1" step="0.02"
+      onInput="ChangeOpacity('id-imgback', value)"/>
+    <button id="btn_showImg"
+      onClick="ChangeOpacity('id-imgback', '1')">Show Image</button>
   </div>
   <script>
     function ChangeOpacity(id, val) {
@@ -256,9 +264,10 @@
       x.style.opacity = val;
       x.style.display = (val == "0") ? "none" : "block";
       switch (id) { // synchronize with the slider
-        case "original-cover-layer": document.getElementById("range_orgOpacity").value = val; break;
-        case "ID_LSBBack":           document.getElementById("range_LSBOpacity").value = val; break;
-        case "ID_RSBBack":           document.getElementById("range_RSBOpacity").value = val; break;
+        case "id-orgback": document.getElementById("range_orgOpacity").value = val; break;
+        case "id-LSBBack": document.getElementById("range_LSBOpacity").value = val; break;
+        case "id-RSBBack": document.getElementById("range_RSBOpacity").value = val; break;
+        case "id-imgback": document.getElementById("range_imgOpacity").value = val; break;
       }
     }
   </script>

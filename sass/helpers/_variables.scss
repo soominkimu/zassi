@@ -33,47 +33,47 @@ $RSBBack-opacity:      1;
 $big-circle-opacity:   1;
 
 /* fonts */
-$body-font: "Mplus 1p", Arial, "Helvetica Neue", Helvetica, sans-serif;
-$bold-font: Arial Black, Arial Bold, "Noto Sans Japanese", serif;
+$body-font: 'Mplus 1p', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$bold-font: 'Noto Sans Japanese', Arial Black, Arial Bold, serif;
 
 /* text colors */
-$title-color:             #D10012;
-$title-sub-color:         #F6BC1D;
-$title-slant-color:       #14168E;
-$exclusive-color:         #90572D;
-$big-circle-color:        #D90016;
-$small-circle-color:      #14168E;
-$header-background-color: #F7AF2C;
-$header-second-color:     #E00D8E;
-$LSB-background-color:    #E1689E;
-$msb011-color:            #E7A026;
-$msb013-color:            #D54679;
-$msb015-color:            #DD001B;
+$title-color:             #d10012;
+$title-sub-color:         #f6bc1d;
+$title-slant-color:       #14168e;
+$exclusive-color:         #90572d;
+$big-circle-color:        #d90016;
+$small-circle-color:      #14168e;
+$header-background-color: #f7af2c;
+$header-second-color:     #e00d8e;
+$LSB-background-color:    #e1689e;
+$msb011-color:            #e7a026;
+$msb013-color:            #d54679;
+$msb015-color:            #dd001b;
 $msb021-color:            white;
 $msb023-color:            $msb015-color;
-$footer01-color:          #21206B;
-$footer02-color:          #DC1080;
-$footer03-color:          #B37A3F;
+$footer01-color:          #21206b;
+$footer02-color:          #dc1080;
+$footer03-color:          #b37a3f;
 $footer04-color:          $footer02-color;
 
 /* Right Sidebar background colors
-#814E26
-#E73D81
-#F48F0E
-#E73D81
-#C3000F
-#150E5B
-#D20056
+#814e26
+#e73d81
+#f48f0e
+#e73d81
+#c3000f
+#150e5b
+#d20056
 */
 $dimP: 10%;
 $rsb_bkcolor:
-  lighten(#814E26, $dimP)
-  lighten(#E73D81, $dimP)
-  lighten(#F48F0E, $dimP)
-  lighten(#E73D81, $dimP)
-  lighten(#C3000F, $dimP)
-  lighten(#150E5B, $dimP)
-  lighten(#D20056, $dimP);
+  lighten(#814e26, $dimP)
+  lighten(#e73d81, $dimP)
+  lighten(#f48f0e, $dimP)
+  lighten(#e73d81, $dimP)
+  lighten(#c3000f, $dimP)
+  lighten(#150e5b, $dimP)
+  lighten(#d20056, $dimP);
 
 /* z-index for layers */
 $z-top-layer:          500;

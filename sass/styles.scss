@@ -24,6 +24,9 @@
  * |
  * +-- styles.scss             # primary Sass file
  * ---------------------------------------------------------
+ * Style Guidelines
+ * - Google HTML/CSS Style Guide (https://google.github.io/styleguide/htmlcssguide.html)
+ * - BEM(http://getbem.com/)
  * Recommended tools
  * - grunt | gulp | webpack
  * - postcss (autoprefixer)
@@ -51,7 +54,7 @@ body {
     opacity: $main-img-opacity;
   }
 }
-#original-cover-layer {
+#id-orgback {       /* original cover design image to compare */
   display: none;    /* so that do not cover other elements */
   opacity: 0;       /* hide when started */
 }
