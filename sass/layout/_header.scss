@@ -40,11 +40,6 @@
   }
 }
 
-@keyframes spinRedCircle {
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .circleTextBig {  /* right top big red circle */
   width: 208px;
   height: 208px;
@@ -53,7 +48,7 @@
   margin-left: 10px;
   margin-top: -3px;
   @extend %circleText;
-//  animation: spinRedCircle 60s linear 1;
+//  animation: ani-spin-circle 60s linear 1;
   text-shadow: 0px 0px 4px darken($big-circle-color, 30%);
 
   .ctext01 {  /* 恒例! */

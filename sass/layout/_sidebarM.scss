@@ -9,23 +9,26 @@
   transform: scaleX(1.2);
   letter-spacing: -.06em;
 
-  .msb011 { /* 石原さとみ */
+  .msb011,
+  .msb013 { /* 石原さとみ,「わろてんか」 */
     font-size: 1.1em;
     font-weight: bold;
-    color: $msb011-color;
     margin-top: 16px;
-    .msb011a { /* 見つめる未来は？ */
+    .msb011a,
+    .msb013a { /* 見つめる未来は？,風鳥亭は波乱の年明け⁉︎  */
       font-weight: normal;
       font-size: .6em;
     }
-    .msb013 { /* 「わろてんか」*/
-      color: $msb013-color;
-      .msb013a { /* 風鳥亭は波乱の年明け⁉︎ */
-        font-weight: normal;
-        font-size: .6em;
-      }
-    }
   }
+  .msb011,
+  .msb011a {
+    color: $msb011-color;
+  }
+  .msb013,
+  .msb013a {
+    color: $msb013-color;
+  }
+
   .msb015 {  /* 「世界一危険な基地」のそばで暮らす... */
     font-size: 1.6em;
     font-weight: bold;

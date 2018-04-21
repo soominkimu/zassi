@@ -23,15 +23,16 @@
   .contLSB     { @include grid_row_col_z(1, 5, 1, 2, $z-third-layer); }
   .contLSBBack { @include grid_row_col_z(1, 5, 1, 2, $z-underground-layer); }
   .contLSBImg  { @include grid_row_col_z(1, 5, 1, 2, $z-ground-layer); }
-  .contHeader  { @include grid_row_col_z(1, 2, 2, 4, $z-second-layer); }
-  .contRST     { @include grid_row_col_z(1, 2, 3, 4, $z-top-layer); }
-  .contRSB     { @include grid_row_col_z(3, 5, 3, 4, $z-second-layer); }
-  .contRSBBack { @include grid_row_col_z(3, 5, 3, 4, $z-underground-layer); }
+  .contHeader  { @include grid_row_col_z(1, 2, 2, 5, $z-second-layer); }
+  .contRST     { @include grid_row_col_z(1, 2, 3, 5, $z-top-layer); }
+  .contPublish { @include grid_row_col_z(1, 3, 4, 5, $z-top-layer); }
+  .contRSB     { @include grid_row_col_z(3, 5, 3, 5, $z-second-layer); }
+  .contRSBBack { @include grid_row_col_z(3, 5, 3, 5, $z-underground-layer); }
   .contFooter  { @include grid_row_col_z(4, 5, 2, 3, $z-second-layer); }
   .contTitle   { @include grid_row_col_z(2, 3, 2, 4, $z-ground-layer); }
   .contBack    { @include grid_row_col_z(2, 5, 1, 4, $z-bottom-layer); }
   .contMSB     { @include grid_row_col_z(3, 5, 2, 3, $z-second-layer); }
-  .contLayer2  { @include grid_row_col_z(1, 5, 1, 4, $z-top-layer); }
+  .contLayer2  { @include grid_row_col_z(1, 5, 1, 5, $z-top-layer); }
   /* content Left Sidebar */
   /* content Left Sidebar Background */
   /* content Header */
@@ -42,41 +43,42 @@
   /* content Background */
   /* content Middle Sidebar  */
   /* content Layer2 for another layer to show the original cover design */
-}
 
-/* Triumphant SASS for-loop!! Apr.17,2018 */
-.contRSBBack {
-  $lg: "";
-  $y1: 0px;
-  $y2: 0px;
+  /* Triumphant SASS for-loop!! Apr.17,2018 */
+  .contRSBBack {
+    $lg: "";
+    $y1: 0px;
+    $y2: 0px;
+    @for $r from 1 through length($rsb_row) {
+      $c: rgba(nth($rsb_bkcolor, $r), $RSBBack-opacity);
+      $y2: $y1 + nth($rsb_row, $r);
+      $lg: $lg + "#{$c} #{$y1},#{$c} #{$y2}";
+      $y1: $y2;
+      @if $r < length($rsb_row)  {
+        $lg: $lg + ",";
+      }
+    }
+    background: linear-gradient(to bottom, #{$lg});
+  }
+
+  /* Flexbox - for Right Sidebar */
+  .containerRSB {
+    display: flex;
+    flex-flow: column;
+  }
+
   @for $r from 1 through length($rsb_row) {
-    $c: rgba(nth($rsb_bkcolor, $r), $RSBBack-opacity);
-    $y2: $y1 + nth($rsb_row, $r);
-    $lg: $lg + "#{$c} #{$y1},#{$c} #{$y2}";
-    $y1: $y2;
-    @if $r < length($rsb_row)  {
-      $lg: $lg + ",";
+    .containerRSB > .RSB#{$r} {
+      flex: 1;
+  //  min-height: nth($rsb_row, $r) - 2px;
+      z-index: $z-second-layer;
+      padding-left: 4px;
+      padding-right: 4px;
+      padding-top: 2px;
     }
   }
-  background: linear-gradient(to bottom, #{$lg});
+  /* for firefox, height does not work, use min-height */
+  /* background: color; will set both texts and bkg opacity */
+  /* to make only the bkg color have opacity use the mixin */
 }
 
-/* Flexbox - for Right Sidebar */
-.containerRSB {
-  display: flex;
-  flex-flow: column;
-}
-
-@for $r from 1 through length($rsb_row) {
-  .containerRSB > .RSB#{$r} {
-    flex: 1;
-//  min-height: nth($rsb_row, $r) - 2px;
-    z-index: $z-second-layer;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-top: 2px;
-  }
-}
-/* for firefox, height does not work, use min-height */
-/* background: color; will set both texts and bkg opacity */
-/* to make only the bkg color have opacity use the mixin */

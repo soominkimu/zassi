@@ -7,6 +7,7 @@
   fill: white;
   transform: scaleY(1.5);
 }
+
 /* CSS style */
 .contRSB {
   .rsb1img {  /* NHK drama */
@@ -20,9 +21,11 @@
     float: left;
   }
 }
+
 .bbtext {   /* blackboxed text such as 特別付録、主演、よくわかる、...*/
   @include textOnBox(white, black, 1px);
 }
+
 .containerRSB {
   white-space: nowrap;
 

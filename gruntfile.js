@@ -5,6 +5,7 @@ module.exports = function (grunt) {
 		// Watch task config
 		watch: {
 			sass: {
+				// watch only sass files (no css output)
 				files: "sass/**",
 				tasks: ['sass', 'postcss']
 			}
@@ -40,6 +41,7 @@ module.exports = function (grunt) {
 					src: [
 						"*.html",
 						"css/*.css",
+						"images/**"
 					]
 				},
 				options: {

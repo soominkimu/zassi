@@ -5,15 +5,17 @@ $doc_H: 985px;
 $grid_col:
   $doc_W * 243/796
   $doc_W * 333/796
-  $doc_W * 220/796;
+  $doc_W * 210/796
+  $doc_W *  10/796;
 $grid_row:
   $doc_H * 200/985
   $doc_H * 136/985
   $doc_H * 329/985
   $doc_H * 320/985;
 
-/* right sidebar height */
-$rsb_W: nth($grid_col, 3);
+/* right sidebar dimension */
+$rsb_W: nth($grid_col, 3)
+      + nth($grid_col, 4);
 $rsb_H: nth($grid_row, 3)
       + nth($grid_row, 4);
 

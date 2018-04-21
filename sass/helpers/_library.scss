@@ -43,3 +43,20 @@
   top: 2px;
 }
 
+// CSS Animations
+// transform: translateX(100%);
+// animation: marquee-text 10s linear infinite;
+@keyframes ani-marquee-text {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes ani-spin-circle {
+  100% {
+    transform: rotate(360deg);
+  }
+}

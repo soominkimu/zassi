@@ -47,6 +47,22 @@ body {
   font-family: $body-font;
   margin: 0;
 }
+
+a:link,
+a:visited {
+  color: white;
+  text-decoration: none;
+  text-shadow: 0px 0px 4px blue;
+}
+
+a:hover,
+a:active {
+  text-decoration: green wavy underline;
+  text-shadow: 0px 0px 4px white;
+  text-shadow: 0px 0px 8px pink;
+  text-shadow: 0px 0px 12px magenta;
+}
+
 .main-img {   /* 石原さとみ */
   margin-left: 43px;    /* fit to left eye 20px, right eye 43px */
   margin-top: 28px;
@@ -54,10 +70,12 @@ body {
     opacity: $main-img-opacity;
   }
 }
+
 #id-orgback {       /* original cover design image to compare */
   display: none;    /* so that do not cover other elements */
   opacity: 0;       /* hide when started */
 }
+
 .centerMsg {
   margin: 2px;
   text-align: center;
@@ -73,6 +91,7 @@ body {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
 /* SVG styles */
 #titleMain {
   font-size: 8.55em;
@@ -86,6 +105,7 @@ body {
     font-size: 1.4em;
   }
 }
+
 #titleSlant {   /* 違いのわかるニッポンの不思議SHOW */
   font-size: 1.1em;
   font-weight: bolder;
@@ -93,6 +113,7 @@ body {
   z-index: $z-second-layer;
   transform: rotate($text-rotation-deg);
 }
+
 #titleSub {   /* 新年スペシャル合併号 */
   font-size: 1.5em;
   font-weight: bolder;
@@ -122,3 +143,20 @@ body {
   font-size: .8em;
 }
 
+/* Animations */
+.contTitle,
+.contHeader,
+.contFooter {
+  opacity: 1;
+  transition: opacity .8s;
+}
+
+.contTitle:hover,
+.contHeader:hover,
+.contFooter:hover {
+  opacity: .2;
+}
+
+.circleTextBig:hover {
+  animation: ani-spin-circle 1s linear infinite;
+}
