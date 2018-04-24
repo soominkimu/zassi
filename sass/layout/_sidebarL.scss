@@ -10,7 +10,7 @@
   .lsb00 {   /* 独占直撃撮! */
     color: $exclusive-color;
     @include background-opacity(black, $LSBBack-opacity);
-    text-shadow: 0px 0px 2px black;
+    text-shadow: 0 0 2px black;
     transform: rotate($text-rotation-deg);
     font-size: 2.6em;
     font-weight: bolder;
@@ -32,7 +32,7 @@
   color: black;
   white-space: nowrap;
   @if $LSBBack-opacity > .1 {
-    text-shadow: 0px 0px 2px lighten($LSB-background-color, 20%);
+    text-shadow: 0 0 2px lighten($LSB-background-color, 20%);
   }
 
   .lsb011 {   /* 上原多香子 */

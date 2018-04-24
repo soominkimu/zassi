@@ -51,6 +51,27 @@ module.exports = function (grunt) {
 					}
 				}
 			}
+		},
+		cssmin: {
+			target: {
+				files: [{
+					expand: true,
+					src: ['css/*.css'],
+					dest: 'dist',
+					ext: '.css'
+				}]
+			}
+		},
+		htmlmin: {
+			dist: {
+				options: {
+					removeComments: true,
+					collapseWhitespace: true
+				},
+				files: {
+					'dist/index.html': 'index.html'
+				}
+			}
 		}
 	});
 
@@ -58,7 +79,10 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-browser-sync');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
 	// Launch BrowserSync + watch task
 	grunt.registerTask('default', ['browserSync', 'watch']);
+	grunt.registerTask('build', ['sass', 'postcss', 'cssmin', 'htmlmin']);
 };

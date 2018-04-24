@@ -2,13 +2,13 @@
 @mixin footerCommon($color, $font-weight: bolder) {
   color: $color;
   font-weight: $font-weight;
-  text-shadow: 0px 0px 1px darken($color, 30%);
+  text-shadow: 0 0 1px darken($color, 30%);
 }
 .footerText {
   z-index: $z-ground-layer;
   font-family: $bold-font;
   font-weight: 400;
-  text-shadow: 0px 0px 2px white;
+  text-shadow: 0 0 2px white;
   padding-left: 7px;
 
   .footer01 {   // #21206B

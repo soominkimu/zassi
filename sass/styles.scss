@@ -48,19 +48,20 @@ body {
   margin: 0;
 }
 
-a:link,
-a:visited {
-  color: white;
-  text-decoration: none;
-  text-shadow: 0px 0px 4px blue;
-}
-
-a:hover,
-a:active {
-  text-decoration: green wavy underline;
-  text-shadow: 0px 0px 4px white;
-  text-shadow: 0px 0px 8px pink;
-  text-shadow: 0px 0px 12px magenta;
+a {
+  &:link,
+  &:visited {
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 0 4px blue;
+  }
+  &:hover,
+  &:active {
+    text-decoration: green wavy underline;
+    text-shadow: 0 0 4px white,
+                 0 0 8px pink,
+                 0 0 12px magenta;
+  }
 }
 
 .main-img {   /* 石原さとみ */
@@ -98,7 +99,7 @@ a:active {
   font-style: italic;
   font-weight: bold;
   color: $title-color;
-  text-shadow: 0px 0px 6px lighten($title-color, 30%);
+  text-shadow: 0 0 6px lighten($title-color, 30%);
   fill: currentColor;
 
   #titleMain2 {
@@ -119,7 +120,7 @@ a:active {
   font-weight: bolder;
   fill: $title-sub-color;
   z-index: $z-second-layer;
-  text-shadow: 0px 0px 8px black;
+  text-shadow: 0 0 8px black;
   transform: scaleY(1.3);
 }
 
@@ -148,7 +149,7 @@ a:active {
 .contHeader,
 .contFooter {
   opacity: 1;
-  transition: opacity .8s;
+  transition: opacity 1.5s;
 }
 
 .contTitle:hover,

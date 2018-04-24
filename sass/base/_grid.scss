@@ -32,7 +32,7 @@
   .contTitle   { @include grid_row_col_z(2, 3, 2, 4, $z-ground-layer); }
   .contBack    { @include grid_row_col_z(2, 5, 1, 4, $z-bottom-layer); }
   .contMSB     { @include grid_row_col_z(3, 5, 2, 3, $z-second-layer); }
-  .contLayer2  { @include grid_row_col_z(1, 5, 1, 5, $z-top-layer); }
+  .contLayer2  { @include grid_row_col_z(1, 2, 1, 2, $z-top-layer); }
   /* content Left Sidebar */
   /* content Left Sidebar Background */
   /* content Header */

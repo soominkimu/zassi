@@ -5,7 +5,7 @@
 }
 .msb01 {
   white-space: nowrap;
-  text-shadow: 0px 0px 1px black;
+  text-shadow: 0 0 1px black;
   transform: scaleX(1.2);
   letter-spacing: -.06em;
 
@@ -44,7 +44,7 @@
 .msb02 {
   writing-mode: horizontal-tb;
   display: inline-block;
-  text-shadow: 0px 0px 2px black;
+  text-shadow: 0 0 2px black;
   letter-spacing: -.1em;
   transform: rotate($text-rotation-deg);
   margin-top: 132px;

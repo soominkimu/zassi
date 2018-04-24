@@ -229,39 +229,31 @@
   <!-- Controls -->
   <h3 class="centerMsg">Optimized for Chrome and Firefox (not for Safari and IE yet)</h3>
   <div class="controlContainer">
-    <button id="btn_hideOrg"
-      onClick="ChangeOpacity('id-orgback', '0')">Web</button>
+    <button id="btn_hideOrg" onClick="SetOpacity('id-orgback', '0')">Web</button>
     <input id="range_orgOpacity" type="range" min="0" max="1" value="0" step="0.02"
-      onInput="ChangeOpacity('id-orgback', value)"/>
-    <button id="btn_showOrg"
-      onClick="ChangeOpacity('id-orgback', '1')">Paper</button>
+                             onInput="SetOpacity('id-orgback', value)"/>
+    <button id="btn_showOrg" onClick="SetOpacity('id-orgback', '1')">Paper</button>
   </div>
   <div class="controlContainer">
-    <button id="btn_hideLSB"
-      onClick="ChangeOpacity('id-LSBBack', '0')">Hide Left Sidebar</button>
+    <button id="btn_hideLSB" onClick="SetOpacity('id-LSBBack', '0')">Hide Left Sidebar</button>
     <input id="range_LSBOpacity" type="range" min="0" max="1" value="1" step="0.02"
-      onInput="ChangeOpacity('id-LSBBack', value)"/>
-    <button id="btn_showLSB"
-      onClick="ChangeOpacity('id-LSBBack', '1')">Show Left Sidebar</button>
+                             onInput="SetOpacity('id-LSBBack', value)"/>
+    <button id="btn_showLSB" onClick="SetOpacity('id-LSBBack', '1')">Show Left Sidebar</button>
   </div>
   <div class="controlContainer">
-    <button id="btn_hideRSB"
-      onClick="ChangeOpacity('id-RSBBack', '0')">Hide Right Sidebar</button>
+    <button id="btn_hideRSB" onClick="SetOpacity('id-RSBBack', '0')">Hide Right Sidebar</button>
     <input id="range_RSBOpacity" type="range" min="0" max="1" value="1" step="0.02"
-      onInput="ChangeOpacity('id-RSBBack', value)"/>
-    <button id="btn_showRSB"
-      onClick="ChangeOpacity('id-RSBBack', '1')">Show Right Sidebar</button>
+                             onInput="SetOpacity('id-RSBBack', value)"/>
+    <button id="btn_showRSB" onClick="SetOpacity('id-RSBBack', '1')">Show Right Sidebar</button>
   </div>
   <div class="controlContainer">
-    <button id="btn_hideImg"
-      onClick="ChangeOpacity('id-imgback', '0')">Hide Image</button>
+    <button id="btn_hideImg" onClick="SetOpacity('id-imgback', '0')">Hide Image</button>
     <input id="range_imgOpacity" type="range" min="0" max="1" value="1" step="0.02"
-      onInput="ChangeOpacity('id-imgback', value)"/>
-    <button id="btn_showImg"
-      onClick="ChangeOpacity('id-imgback', '1')">Show Image</button>
+                             onInput="SetOpacity('id-imgback', value)"/>
+    <button id="btn_showImg" onClick="SetOpacity('id-imgback', '1')">Show Image</button>
   </div>
   <script>
-    function ChangeOpacity(id, val) {
+    function SetOpacity(id, val) {
       var x = document.getElementById(id);
       x.style.opacity = val;
       x.style.display = (val == "0") ? "none" : "block";
