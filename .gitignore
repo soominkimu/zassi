@@ -6,3 +6,4 @@ bak/*
 dist/*
 .sass-cache/*
 *.log
+*.map
