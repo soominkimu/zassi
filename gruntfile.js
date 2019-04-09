@@ -57,7 +57,7 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					src: ['css/*.css'],
-					dest: 'dist',
+					dest: 'build',
 					ext: '.css'
 				}]
 			}
@@ -69,7 +69,7 @@ module.exports = function (grunt) {
 					collapseWhitespace: true
 				},
 				files: {
-					'dist/index.html': 'index.html'
+					'build/index.html': 'index.html'
 				}
 			}
 		}
